@@ -141,3 +141,4 @@ const getUrlDetails = async function (req, res) {
 }
 module.exports.createShortUrl = createShortUrl;
 module.exports.getUrlDetails = getUrlDetails;
+
