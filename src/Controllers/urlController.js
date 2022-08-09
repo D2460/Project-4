@@ -73,7 +73,7 @@ const createShortUrl = async function (req, res) {
         if (url) {
             urlCode = url.urlCode
             let shortUrl = `http://localhost:3000/${urlCode}`
-            await SET_ASYNC(`${longUrl}`, JSON.stringify(url))//set in redis server
+            await SET_ASYNC(`${longUrl}`, JSON.stringify(url))  //set in redis server
             redisClient.expireat(longUrl, parseInt((Date.now())/1000) + 30);
             return res.status(200).send({ status: true, message: "long url already present in DB ", urlDetails: shortUrl })
 
